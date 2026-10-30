@@ -11,19 +11,20 @@ rules run in a WebAssembly module, and the page makes no network request after i
 
 ## The page
 
-One screen, three columns on a wide window, stacked on a narrow one.
+One screen: a header, the rule strip under it, then two wide panes side by side. On a narrow
+window the panes stack, paste area first.
 
-- **Paste area (left).** A plain multi-line text field, placeholder "Paste text to scan". The
-  scan re-runs on every edit.
-- **Rule list (between).** One row per rule: the rule name, a toggle, and a count of matches in
-  the current text. A rule switched off keeps its row and shows its count greyed; its matches are
-  not redacted.
-- **Redacted output (right).** The pasted text with every match replaced by a redaction bar.
+- **"Nothing leaves this page"** as one quiet line in the header, always visible.
+- **Rule strip.** One strip under the header. For each rule: its name, a toggle, and a plain count
+  of matches in the current text. A rule switched off keeps its place and shows its count greyed;
+  its matches are not redacted. The strip ends with a short summary, "N matches hidden, M shown".
+- **Paste area (left pane).** A plain multi-line text field, placeholder "Paste text to scan".
+  The scan re-runs on every edit.
+- **Redacted output (right pane).** The pasted text with every match replaced by a redaction bar.
   Read-only, selectable.
-- **"Nothing leaves this page"** as one quiet line under the header, always visible.
-- **Copy redacted.** Copies the output, with each match replaced by the rule's `replacement`
-  string, to the clipboard. It is the ONE filled button on the page; everything else is a toggle,
-  a text field or a text button.
+- **Copy redacted**, below the panes at the bottom right. Copies the output, with each match
+  replaced by the rule's `replacement` string, to the clipboard. It is the ONE filled button on
+  the page; everything else is a toggle, a text field or a text button.
 
 ## Rules v1
 
@@ -71,3 +72,7 @@ scan(text: string, rulesJson: string) -> string   // JSON: [{ "start": n, "end":
 - Redactions shown as solid black bars the width of the hidden text; hovering a bar shows the
   rule name.
 - One filled button (Copy redacted). Counts are plain numbers, not badges.
+- The header is a band in the accent with white text; the quiet line is in a pale tint of it.
+- Page ground `#eef4f8`. The rule strip and the two panes are white cards with `#b9d2e5` borders.
+- Section labels and counts in the accent. Redaction bars stay black.
+- The picked comp is [`docs/comps/page.html`](comps/page.html) (comp B, ruling on #1, 2026-10-30).

@@ -1,0 +1,93 @@
+<!-- Comp B, picked by the ruling on #1, 2026-10-30. Static: no scanning here. -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RuleSentry Scanner, comp B</title>
+<style>
+body{margin:0;background:#fff}
+a{color:#1F5F8B}a:hover{color:#174a6d}
+.bar{background:#000;color:transparent;border-radius:2px;cursor:help;user-select:none}
+.sw{position:relative;width:36px;height:20px;border-radius:10px;border:0;padding:0;cursor:pointer;flex:none}
+.sw::after{content:"";position:absolute;top:2px;width:16px;height:16px;border-radius:8px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.sw.on{background:#1F5F8B}.sw.on::after{right:2px}
+.sw.off{background:#aebcc7}.sw.off::after{left:2px}
+.sw:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid #1F5F8B;outline-offset:2px}
+textarea{font:inherit}
+</style>
+</head>
+<body>
+<div style="min-height: 800px; box-sizing: border-box; display: flex; flex-direction: column; background: #eef4f8; color: #1a1d20; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 15px; line-height: 1.5">
+
+  <header style="padding: 22px 32px 18px 32px; display: flex; flex-direction: column; gap: 4px; background: #1F5F8B; color: #ffffff">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+      <h1 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.01em">RuleSentry Scanner</h1>
+    </div>
+    <p style="margin: 0; font-size: 14px; color: #d3e3ef">Nothing leaves this page. The scan runs in your browser and makes no network request.</p>
+  </header>
+
+  <nav aria-label="Rules" style="margin: 20px 32px 0 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; padding: 12px 16px; border: 1px solid #b9d2e5; border-radius: 6px; background: #ffffff">
+    <span style="font-size: 13px; font-weight: 600; color: #1F5F8B">Rules</span>
+    <label style="display: flex; align-items: center; gap: 10px">
+      <button class="sw on" role="switch" aria-checked="true" aria-label="Email address"></button>
+      <span>Email address</span>
+      <span style="font-variant-numeric: tabular-nums; font-weight: 600; color: #1F5F8B">2</span>
+    </label>
+    <label style="display: flex; align-items: center; gap: 10px">
+      <button class="sw on" role="switch" aria-checked="true" aria-label="Phone number"></button>
+      <span>Phone number</span>
+      <span style="font-variant-numeric: tabular-nums; font-weight: 600; color: #1F5F8B">1</span>
+    </label>
+    <label style="display: flex; align-items: center; gap: 10px">
+      <button class="sw on" role="switch" aria-checked="true" aria-label="Card number"></button>
+      <span>Card number</span>
+      <span style="font-variant-numeric: tabular-nums; font-weight: 600; color: #1F5F8B">1</span>
+    </label>
+    <label style="display: flex; align-items: center; gap: 10px">
+      <button class="sw off" role="switch" aria-checked="false" aria-label="IBAN"></button>
+      <span style="color: #5b6570">IBAN</span>
+      <span style="font-variant-numeric: tabular-nums; color: #8a939c">1</span>
+    </label>
+    <span style="flex: 1 1 auto"></span>
+    <span style="font-size: 13px; color: #1F5F8B; font-weight: 600">4 matches hidden, 1 shown</span>
+  </nav>
+
+  <main style="flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 24px; padding: 20px 32px 32px 32px; box-sizing: border-box">
+
+    <section aria-labelledby="h-paste" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+      <label id="h-paste" for="paste" style="font-size: 13px; font-weight: 600; color: #1F5F8B">Text to scan</label>
+      <textarea id="paste" placeholder="Paste text to scan" style="flex: 1 1 auto; min-height: 520px; box-sizing: border-box; width: 100%; resize: none; padding: 14px 16px; border: 1px solid #b9d2e5; border-radius: 6px; font-size: 15px; line-height: 1.55; color: #1a1d20; background: #ffffff">Hi Priya,
+
+Thanks for the call. You can reach me at jane.doe@example.co.uk or on +44 20 7946 0958 after 6 pm.
+
+For the deposit, the card on file is 4539 1488 0343 6467 (exp 09/28). If you prefer a transfer, the account is GB82 WEST 1234 5698 7654 32.
+
+Also cc finance@example.co.uk when you send the invoice.
+
+Jane</textarea>
+    </section>
+
+    <section aria-labelledby="h-out" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+      <h2 id="h-out" style="margin: 0; font-size: 13px; font-weight: 600; color: #1F5F8B; min-height: 22px; display: flex; align-items: center">Redacted</h2>
+      <div role="region" aria-label="Redacted output" tabindex="0" style="flex: 1 1 auto; min-height: 520px; box-sizing: border-box; padding: 14px 16px; border: 1px solid #b9d2e5; border-radius: 6px; background: #ffffff; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; line-height: 1.55; color: #1a1d20">Hi Priya,
+
+Thanks for the call. You can reach me at <span class="bar" title="Email address">jane.doe@example.co.uk</span> or on <span class="bar" title="Phone number">+44 20 7946 0958</span> after 6 pm.
+
+For the deposit, the card on file is <span class="bar" title="Card number">4539 1488 0343 6467</span> (exp 09/28). If you prefer a transfer, the account is GB82 WEST 1234 5698 7654 32.
+
+Also cc <span class="bar" title="Email address">finance@example.co.uk</span> when you send the invoice.
+
+Jane</div>
+    </section>
+
+    <div style="flex: 1 1 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <p style="margin: 0; font-size: 13px; color: #5b6570">Hover a bar to see which rule hid it. Copy replaces each bar with the rule's placeholder, such as [email].</p>
+      <button type="button" style="min-height: 40px; padding: 0 20px; border: 0; border-radius: 6px; background: #1F5F8B; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Copy redacted</button>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
