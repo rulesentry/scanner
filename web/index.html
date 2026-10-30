@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>RuleSentry Scanner</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="masthead">
+        <div class="brand">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+          <h1>RuleSentry Scanner</h1>
+        </div>
+        <p class="tagline">Nothing leaves this page. The scan runs in your browser and makes no network request.</p>
+      </header>
+
+      <nav aria-label="Rules" class="strip" id="strip">
+        <span class="label">Rules</span>
+        <span class="spacer" id="strip-end"></span>
+        <span class="label summary" id="summary" aria-live="polite">0 matches hidden, 0 shown</span>
+      </nav>
+
+      <main class="panes">
+        <section aria-labelledby="h-paste" class="pane">
+          <label id="h-paste" for="paste" class="label">Text to scan</label>
+          <textarea id="paste" class="box" placeholder="Paste text to scan" spellcheck="false"></textarea>
+        </section>
+
+        <section aria-labelledby="h-out" class="pane">
+          <h2 id="h-out" class="label pane-heading">Redacted</h2>
+          <div id="output" class="box output" role="region" aria-label="Redacted output" tabindex="0"></div>
+        </section>
+
+        <div class="actions">
+          <p class="hint">Hover a bar to see which rule hid it. Copy replaces each bar with the rule's placeholder, such as [email].</p>
+          <div class="copy">
+            <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
+            <button type="button" id="copy" class="primary">Copy redacted</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
