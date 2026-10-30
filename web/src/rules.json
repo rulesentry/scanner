@@ -1,0 +1,30 @@
+[
+  {
+    "id": "email",
+    "name": "Email address",
+    "kind": "regex",
+    "pattern": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+    "replacement": "[email]"
+  },
+  {
+    "id": "phone",
+    "name": "Phone number",
+    "kind": "regex",
+    "pattern": "(?:\\+|\\b)\\d(?:[ -]?\\d){6,14}\\b",
+    "replacement": "[phone]"
+  },
+  {
+    "id": "card",
+    "name": "Card number",
+    "kind": "regex",
+    "pattern": "\\b\\d(?:[ -]?\\d){12,18}\\b",
+    "replacement": "[card]"
+  },
+  {
+    "id": "iban",
+    "name": "IBAN",
+    "kind": "regex",
+    "pattern": "\\b[A-Z]{2}\\d{2}(?: ?[A-Z0-9]){11,30}\\b",
+    "replacement": "[iban]"
+  }
+]
